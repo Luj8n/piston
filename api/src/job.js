@@ -8,6 +8,7 @@ const globals = require('./globals');
 const fs = require('fs/promises');
 const fss = require('fs');
 const wait_pid = require('waitpid');
+const { performance } = require('perf_hooks');
 
 const job_states = {
     READY: Symbol('Ready to be primed'),
@@ -164,10 +165,15 @@ class Job {
                 });
             }
 
+            const startTime = performance.now();
+
+            let time_limit_exceeded = false;
+
             const kill_timeout =
                 (timeout >= 0 &&
                     set_timeout(async _ => {
                         this.logger.info(`Timeout exceeded timeout=${timeout}`);
+                        time_limit_exceeded = true;
                         process.kill(proc.pid, 'SIGKILL');
                     }, timeout)) ||
                 null;
@@ -209,7 +215,18 @@ class Job {
             proc.on('exit', (code, signal) => {
                 exit_cleanup();
 
-                resolve({ stdout, stderr, code, signal, output });
+                const finishTime = performance.now();
+                const elapsedTime = Math.round(finishTime - startTime);
+
+                resolve({
+                    stdout,
+                    stderr,
+                    code,
+                    signal,
+                    output,
+                    time: elapsedTime,
+                    time_limit_exceeded,
+                });
             });
 
             proc.on('error', err => {
@@ -263,6 +280,7 @@ class Job {
             run,
             language: this.runtime.language,
             version: this.runtime.version.raw,
+            test: 'hopefully this works',
         };
     }
 
