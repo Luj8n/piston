@@ -280,7 +280,6 @@ class Job {
             run,
             language: this.runtime.language,
             version: this.runtime.version.raw,
-            test: 'hopefully this works',
         };
     }
 
