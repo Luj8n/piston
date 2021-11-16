@@ -1,6 +1,6 @@
 <h1 align="center">
-    <a href="https://github.com/Luj8n/piston">
-        <img src="var/docs/images/piston.svg" valign="middle" width="58" height="58" alt="Luj8n piston" />
+    <a href="https://github.com/luj8n/piston">
+        <img src="var/docs/images/piston.svg" valign="middle" width="58" height="58" alt="luj8n piston" />
     </a>
     <span valign="middle">
         Piston
@@ -12,14 +12,14 @@
 <br>
 
 <p align="center">
-    <a href="https://github.com/Luj8n/piston/commits/master">
-    <img src="https://img.shields.io/github/last-commit/Luj8n/piston.svg?style=for-the-badge&logo=github&logoColor=white"
+    <a href="https://github.com/luj8n/piston/commits/master">
+    <img src="https://img.shields.io/github/last-commit/luj8n/piston.svg?style=for-the-badge&logo=github&logoColor=white"
          alt="GitHub last commit">
-    <a href="https://github.com/Luj8n/piston/issues">
-    <img src="https://img.shields.io/github/issues/Luj8n/piston.svg?style=for-the-badge&logo=github&logoColor=white"
+    <a href="https://github.com/luj8n/piston/issues">
+    <img src="https://img.shields.io/github/issues/luj8n/piston.svg?style=for-the-badge&logo=github&logoColor=white"
          alt="GitHub issues">
-    <a href="https://github.com/Luj8n/piston/pulls">
-    <img src="https://img.shields.io/github/issues-pr-raw/Luj8n/piston.svg?style=for-the-badge&logo=github&logoColor=white"
+    <a href="https://github.com/luj8n/piston/pulls">
+    <img src="https://img.shields.io/github/issues-pr-raw/luj8n/piston.svg?style=for-the-badge&logo=github&logoColor=white"
          alt="GitHub pull requests">
 </p>
 
@@ -124,7 +124,7 @@ POST https://emkc.org/api/v2/piston/execute
 
 ```sh
 # clone and enter repo
-git clone https://github.com/Luj8n/piston
+git clone https://github.com/luj8n/piston
 ```
 
 ### Installation
@@ -154,7 +154,7 @@ docker run \
     -dit \
     -p 2000:2000 \
     --name piston_api \
-    ghcr.io/Luj8n/piston
+    ghcr.io/luj8n/piston
 ```
 
 ## Piston for testing packages locally

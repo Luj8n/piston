@@ -28,4 +28,4 @@ jobs:
                   pull: true
                   push: true
                   tags: |
-                      docker.pkg.github.com/Luj8n/piston/repo-builder
+                      docker.pkg.github.com/luj8n/piston/repo-builder

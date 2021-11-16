@@ -173,7 +173,7 @@ const options = [
     {
         key: 'repo_url',
         desc: 'URL of repo index',
-        default: 'https://github.com/Luj8n/piston/releases/download/pkgs/index',
+        default: 'https://github.com/luj8n/piston/releases/download/pkgs/index',
         validators: [],
     },
     {

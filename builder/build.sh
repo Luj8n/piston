@@ -25,7 +25,7 @@ fetch_packages(){
         -dit \
         -p $port:2000 \
         --name builder_piston_instance \
-        ghcr.io/Luj8n/piston
+        ghcr.io/luj8n/piston
     
     # Ensure the CLI is installed
     cd ../cli

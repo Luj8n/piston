@@ -1,2 +1,2 @@
-FROM ghcr.io/Luj8n/piston:latest
+FROM ghcr.io/luj8n/piston:latest
 ADD . /piston/packages/
