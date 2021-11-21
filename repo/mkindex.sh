@@ -2,11 +2,10 @@ BASEURL=http://repo:8000/
 
 i=0
 
-echo "" > index
+echo "" >index
 
-for pkg in $(find ../packages -type f -name "*.pkg.tar.gz")
-do
-    
+for pkg in $(find ../packages -type f -name "*.pkg.tar.gz"); do
+
     cp $pkg .
 
     PKGFILE=$(basename $pkg)
@@ -16,8 +15,8 @@ do
     PKGVERSION=$(echo $PKGFILENAME | grep -oP '^.+-\K.+')
     PKGCHECKSUM=$(sha256sum $PKGFILE | awk '{print $1}')
 
-    echo "$PKGNAME,$PKGVERSION,$PKGCHECKSUM,$BASEURL$PKGFILE" >> index
+    echo "$PKGNAME,$PKGVERSION,$PKGCHECKSUM,$BASEURL$PKGFILE" >>index
     echo "Adding package $PKGNAME-$PKGVERSION"
-    
-    ((i=i+1))
+
+    ((i = i + 1))
 done

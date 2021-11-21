@@ -6,8 +6,7 @@ CI=0
 
 echo "Running through arguments.."
 
-for pkg in "$@"
-do
+for pkg in "$@"; do
     shift
     if [[ "$pkg" = "--no-server" ]]; then
         echo "Not starting index server after builds"
@@ -27,7 +26,7 @@ do
             echo "Done with package $pkg"
         elif [[ $CI -eq 1 ]]; then
             echo "Commit SHA: $pkg"
-            
+
             cd ..
             echo "Changed files:"
             git diff --name-only $pkg^1 $pkg
