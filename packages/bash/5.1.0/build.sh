@@ -18,4 +18,3 @@ make -j$(nproc)
 make install -j$(nproc)
 cd ../
 rm -rf build
-
