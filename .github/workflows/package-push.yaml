@@ -30,7 +30,7 @@ jobs:
 
             - name: Build Packages
               run: |
-                  PACKAGES="bash-5.1.0 brainfuck-2.7.3 cjam-0.6.5 clojure-1.10.3 cobol-3.1.2 coffeescript-2.5.1 cow-1.0.0 crystal-0.36.1 dart-2.12.1 dash-0.5.11 deno-1.7.5 dotnet-5.0.201 dragon-1.9.8 elixir-1.11.3 emacs-27.1.0 erlang-23.0.0"
+                  PACKAGES="file-0.0.1 forte-1.0.0 freebasic-1.8.0 gawk-5.1.0 gcc-10.2.0 go-1.16.2 golfscript-1.0.0 groovy-3.0.7 haskell-9.0.1 husk-1.0.0 iverilog-11.0.0 japt-2.0.0 java-15.0.2 jelly-0.1.31 julia-1.5.4 julia-1.6.1 kotlin-1.4.31 lisp-2.1.2 llvm_ir-12.0.1 lolcode-0.11.2 lua-5.4.2 mono-6.12.0 nasm-2.15.5 nim-1.4.4"
                   echo "Packages: $PACKAGES"
                   docker pull docker.pkg.github.com/luj8n/piston/repo-builder:latest
                   docker build -t repo-builder repo
