@@ -63,8 +63,8 @@ Runs the given code, using the given runtime and arguments, returning the result
 -   `files[].encoding` (_optional_): The encoding scheme used for the file content. One of `base64`, `hex` or `utf8`. Defaults to `utf8`.
 -   `stdin` (_optional_): Text to pass into stdin of the program. Defaults to blank string.
 -   `args` (_optional_): Arguments to pass to the program. Defaults to none
--   `run_timeout` (_optional_): The maximum allowed time in milliseconds for the compile stage to finish before bailing out. Must be a number, less than or equal to the configured maximum timeout.
--   `compile_timeout` (_optional_): The maximum allowed time in milliseconds for the run stage to finish before bailing out. Must be a number, less than or equal to the configured maximum timeout. Defaults to maximum.
+-   `compile_timeout` (_optional_): The maximum allowed time in milliseconds for the compile stage to finish before bailing out. Must be a number, less than or equal to the configured maximum timeout.
+-   `run_timeout` (_optional_): The maximum allowed time in milliseconds for the run stage to finish before bailing out. Must be a number, less than or equal to the configured maximum timeout. Defaults to maximum.
 -   `compile_memory_limit` (_optional_): The maximum amount of memory the compile stage is allowed to use in bytes. Must be a number, less than or equal to the configured maximum. Defaults to maximum, or `-1` (no limit) if none is configured.
 -   `run_memory_limit` (_optional_): The maximum amount of memory the run stage is allowed to use in bytes. Must be a number, less than or equal to the configured maximum. Defaults to maximum, or `-1` (no limit) if none is configured.
 
@@ -78,12 +78,16 @@ Runs the given code, using the given runtime and arguments, returning the result
 -   `run.output`: stdout and stderr combined in order of data from run stage process
 -   `run.code`: Exit code from run process, or null if signal is not null
 -   `run.signal`: Signal from run process, or null if code is not null
+-   `run.time`: How much time it took for the code to run
+-   `run.time_limit_exceeded`: Whether it exceeded the time limit (3000ms by default)
 -   `compile` (_optional_): Results from the compile stage, only provided if the runtime has a compile stage
 -   `compile.stdout`: stdout from compile stage process
 -   `compile.stderr`: stderr from compile stage process
 -   `compile.output`: stdout and stderr combined in order of data from compile stage process
 -   `compile.code`: Exit code from compile process, or null if signal is not null
 -   `compile.signal`: Signal from compile process, or null if code is not null
+-   `compile.time`: How much time it took for the code to compile
+-   `run.time_limit_exceeded`: Whether it exceeded the time limit (10000ms by default)
 
 #### Example
 
